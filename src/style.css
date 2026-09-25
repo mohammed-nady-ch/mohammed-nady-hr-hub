@@ -1,0 +1,914 @@
+:root {
+  background: #f7faf9;
+  color: #10233a;
+  font-family: Inter, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #e5ecea;
+  display: flex;
+  gap: 24px;
+  height: 72px;
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.brand {
+  align-items: center;
+  background: none;
+  border: 0;
+  color: inherit;
+  display: flex;
+  gap: 12px;
+  min-width: 240px;
+  padding: 0;
+  text-align: start;
+}
+
+.brand > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand small {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.mn {
+  color: #08706d;
+  font: 38px Georgia, serif;
+}
+
+.desktopNav {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  gap: 20px;
+  justify-content: center;
+}
+
+.desktopNav a,
+.desktopNav button,
+.mobileNav a,
+.mobileNav button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+.desktopNav button.active,
+.mobileNav button.active {
+  color: #08706d;
+  font-weight: 800;
+}
+
+.menuToggle,
+.mobileNav {
+  display: none;
+}
+
+.menuToggle {
+  align-items: center;
+  background: transparent;
+  border: 1px solid #cfdcda;
+  border-radius: 7px;
+  height: 40px;
+  justify-content: center;
+  padding: 0 10px;
+  width: 40px;
+}
+
+.menuToggle span {
+  background: #10233a;
+  border-radius: 2px;
+  display: block;
+  height: 2px;
+  transition: transform 160ms ease, opacity 160ms ease;
+  width: 18px;
+}
+
+.menuToggle span + span {
+  margin-top: 4px;
+}
+
+.menuToggle.open span:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menuToggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuToggle.open span:last-child {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.lang {
+  background: none;
+  border: 0;
+  font-weight: 800;
+}
+
+.in {
+  background: #08706d;
+  border-radius: 5px;
+  color: white;
+  font-weight: 800;
+  padding: 6px 9px;
+}
+
+.hero {
+  background: linear-gradient(100deg, #f6faf9, #eaf1ef);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 430px;
+}
+
+.copy {
+  padding: 60px 7%;
+}
+
+.copy > small,
+.pageHero small,
+.cta small {
+  color: #08706d;
+  letter-spacing: 3px;
+}
+
+.copy h1 {
+  font-size: 52px;
+  margin: 12px 0 4px;
+}
+
+.copy h2 {
+  color: #08706d;
+  font-size: 40px;
+  margin: 0;
+}
+
+.copy h3 {
+  font-size: 22px;
+  margin: 16px 0 8px;
+}
+
+.copy p,
+.pageHero p {
+  color: #435365;
+  line-height: 1.55;
+  max-width: 720px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.actions button,
+.tools button {
+  background: #08706d;
+  border: 1px solid #08706d;
+  border-radius: 7px;
+  color: white;
+  font-weight: 700;
+  padding: 13px 23px;
+}
+
+.actions .ghost {
+  background: transparent;
+  color: #08706d;
+}
+
+.portrait {
+  height: 430px;
+  overflow: hidden;
+}
+
+.portrait img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  width: 100%;
+}
+
+.stats {
+  background: #fff;
+  border-bottom: 1px solid #e4ecea;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 18px 5%;
+}
+
+.stats div {
+  align-items: center;
+  border-right: 1px solid #dde7e5;
+  display: flex;
+  gap: 12px;
+  padding: 0 18px;
+}
+
+.stats b {
+  color: #08706d;
+  font-size: 25px;
+}
+
+.stats span {
+  font-size: 12px;
+}
+
+.section {
+  padding: 34px 5%;
+}
+
+.title {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.title h2,
+.lower h2,
+.split h2 {
+  font-size: 22px;
+}
+
+.title p {
+  color: #6a7782;
+}
+
+.grid4 {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid4 article,
+.tools article,
+.case,
+.split article,
+.calculator,
+.results {
+  background: #fff;
+  border: 1px solid #dce7e5;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.grid4 i,
+.tools i {
+  color: #08706d;
+  font-size: 28px;
+  font-style: normal;
+}
+
+.grid4 p,
+.tools p,
+.case p,
+.split p,
+.results p {
+  color: #667480;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tools {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tools article {
+  min-height: 230px;
+}
+
+.tools button {
+  margin-top: 8px;
+  padding: 10px 16px;
+}
+
+.tools span {
+  color: #78858e;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-top: 16px;
+}
+
+.lower {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.case {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  overflow: hidden;
+  padding: 0;
+}
+
+.case > div {
+  background: linear-gradient(135deg, #0b5658, #15354a);
+  color: white;
+  display: grid;
+  font-size: 26px;
+  font-weight: 800;
+  min-height: 150px;
+  place-items: center;
+}
+
+.case section {
+  padding: 18px;
+}
+
+.article {
+  align-items: center;
+  border-bottom: 1px solid #dce7e5;
+  display: flex;
+  font-size: 12px;
+  gap: 10px;
+  padding: 15px 4px;
+}
+
+.article b {
+  flex: 1;
+}
+
+.pageHero {
+  background: linear-gradient(100deg, #f6faf9, #eaf1ef);
+  padding: 62px 7% 50px;
+}
+
+.pageHero h1 {
+  font-size: 42px;
+  line-height: 1.16;
+  margin: 14px 0;
+  max-width: 920px;
+}
+
+.split {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.toolShell {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.payrollSection {
+  display: grid;
+  gap: 22px;
+}
+
+.calculationTabs {
+  background: #eaf1ef;
+  border-radius: 9px;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 620px;
+  padding: 4px;
+}
+
+.calculationTabs button {
+  background: transparent;
+  border: 0;
+  border-radius: 7px;
+  color: #607080;
+  font-weight: 800;
+  padding: 12px;
+}
+
+.calculationTabs button.active {
+  background: #08706d;
+  box-shadow: 0 5px 14px rgb(8 112 109 / 18%);
+  color: #fff;
+}
+
+.payrollShell {
+  align-items: start;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+}
+
+.payrollInputs,
+.payrollResults {
+  background: #fff;
+  border: 1px solid #dde7e5;
+  border-radius: 12px;
+  min-width: 0;
+  padding: 22px;
+}
+
+.formSectionHeading h2 {
+  font-size: 19px;
+  margin: 0 0 6px;
+}
+
+.formSectionHeading p {
+  color: #75818b;
+  font-size: 12px;
+  margin: 0;
+}
+
+.earningList {
+  display: grid;
+  gap: 10px;
+}
+
+.earningRow {
+  align-items: end;
+  border-bottom: 1px solid #edf2f1;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding-bottom: 10px;
+}
+
+.moneyField {
+  min-width: 0;
+}
+
+.moneyField small {
+  color: #8a671f;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.componentTreatment {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 11px;
+}
+
+.legalNotice {
+  background: #eef8f6;
+  border-color: #c9e2df;
+  color: #315f5d !important;
+}
+
+.insuranceNotice {
+  margin: 0;
+}
+
+.componentTreatment label,
+.payrollChecks label,
+.customWageToggle {
+  align-items: center;
+  color: #425568;
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 5px;
+}
+
+.componentTreatment input,
+.payrollChecks input,
+.customWageToggle input {
+  accent-color: #08706d;
+}
+
+.payrollChecks {
+  border: 1px solid #dde7e5;
+  border-radius: 9px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0;
+  padding: 15px;
+}
+
+.payrollChecks legend {
+  color: #10233a;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 0 6px;
+}
+
+.advancedSettings {
+  border: 1px solid #cfdcda;
+  border-radius: 9px;
+  padding: 0 15px;
+}
+
+.advancedSettings summary {
+  color: #08706d;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 15px 0;
+}
+
+.advancedSettings[open] summary {
+  border-bottom: 1px solid #edf2f1;
+  margin-bottom: 15px;
+}
+
+.advancedGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.customWageToggle {
+  margin: 16px 0 10px;
+}
+
+.settingWarning,
+.calculationWarning {
+  background: #fff8e6;
+  border: 1px solid #f0ddb0;
+  border-radius: 7px;
+  color: #74571a !important;
+  font-size: 11px !important;
+  padding: 10px;
+}
+
+.employerBenefitFields {
+  border-top: 1px solid #edf2f1;
+  margin-top: 15px;
+  padding: 15px 0;
+}
+
+.payrollResults {
+  position: sticky;
+  top: 94px;
+}
+
+.payrollResults > small {
+  color: #08706d;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.primaryResult {
+  margin: 14px 0 4px;
+}
+
+.resultBreakdown {
+  display: grid;
+  gap: 0;
+}
+
+.resultBreakdown div {
+  padding: 11px 0;
+}
+
+.resultBreakdown b {
+  font-size: 15px;
+  text-align: end;
+  white-space: nowrap;
+}
+
+.resultBreakdown .emphasizedRow b {
+  color: #08706d;
+  font-size: 18px;
+}
+
+.calculator {
+  display: grid;
+  gap: 16px;
+}
+
+.calculator label {
+  display: grid;
+  gap: 7px;
+}
+
+.calculator span,
+.results span {
+  color: #607080;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.calculator input {
+  border: 1px solid #cfdcda;
+  border-radius: 7px;
+  color: #10233a;
+  padding: 12px;
+  width: 100%;
+}
+
+.calculator input:disabled {
+  background: #eef3f2;
+  color: #425568;
+}
+
+.calculator input:focus-visible,
+.calculationTabs button:focus-visible,
+.advancedSettings summary:focus-visible {
+  outline: 3px solid rgb(8 112 109 / 25%);
+  outline-offset: 2px;
+}
+
+.results {
+  display: grid;
+  gap: 14px;
+}
+
+.results div {
+  align-items: center;
+  border-bottom: 1px solid #e5ecea;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12px;
+}
+
+.results b {
+  color: #10233a;
+  font-size: 20px;
+}
+
+.results .net {
+  background: #eef8f6;
+  border: 1px solid #c9e2df;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.results .net b {
+  color: #08706d;
+  font-size: 28px;
+}
+
+.payrollResults .resultBreakdown {
+  display: grid;
+  width: 100%;
+}
+
+.payrollResults .resultBreakdown > div {
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.cta {
+  align-items: center;
+  background: #076467;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 5%;
+}
+
+.cta small {
+  color: #c9e2df;
+}
+
+.cta h2 {
+  font-size: 28px;
+  margin: 8px 0;
+}
+
+.cta a {
+  border: 1px solid #c9e2df;
+  border-radius: 8px;
+  padding: 13px 20px;
+}
+
+footer {
+  background: white;
+  color: #75818b;
+  font-size: 11px;
+  padding: 24px;
+  text-align: center;
+}
+
+[dir='rtl'] .stats div {
+  border-left: 1px solid #dde7e5;
+  border-right: 0;
+}
+
+[dir='rtl'] .copy,
+[dir='rtl'] .pageHero,
+[dir='rtl'] .brand {
+  text-align: right;
+}
+
+@media (max-width: 980px) {
+  .desktopNav {
+    gap: 12px;
+  }
+
+  .desktopNav a,
+  .desktopNav button {
+    font-size: 12px;
+  }
+
+  .grid4,
+  .tools {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lower,
+  .toolShell {
+    grid-template-columns: 1fr;
+  }
+
+  .payrollResults {
+    position: static;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats div {
+    border: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  header {
+    gap: 14px;
+    height: auto;
+    min-height: 66px;
+    padding: 10px 16px;
+  }
+
+  .brand {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .brand b {
+    font-size: 14px;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .menuToggle {
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  .mobileNav.open {
+    background: #fff;
+    border-bottom: 1px solid #dce7e5;
+    box-shadow: 0 12px 24px rgb(16 35 58 / 12%);
+    display: grid;
+    gap: 0;
+    inset-inline: 0;
+    padding: 8px 16px 14px;
+    position: absolute;
+    top: 100%;
+  }
+
+  .mobileNav a,
+  .mobileNav button {
+    border-bottom: 1px solid #edf2f1;
+    font-size: 14px;
+    padding: 13px 4px;
+    text-align: start;
+    width: 100%;
+  }
+
+  .mobileNav a:last-child {
+    border-bottom: 0;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .portrait {
+    height: 320px;
+  }
+
+  .copy,
+  .pageHero {
+    padding: 28px 20px 35px;
+  }
+
+  .copy h1 {
+    font-size: 38px;
+  }
+
+  .copy h2 {
+    font-size: 29px;
+  }
+
+  .copy h3 {
+    font-size: 19px;
+  }
+
+  .pageHero h1 {
+    font-size: 31px;
+  }
+
+  .actions {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats {
+    padding: 15px;
+  }
+
+  .stats div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .section {
+    padding: 28px 18px;
+  }
+
+  .title {
+    display: block;
+  }
+
+  .grid4,
+  .tools,
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .case {
+    grid-template-columns: 1fr;
+  }
+
+  .case > div {
+    min-height: 130px;
+  }
+
+  .results div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .calculationTabs {
+    max-width: none;
+  }
+
+  .payrollInputs,
+  .payrollResults {
+    padding: 16px;
+  }
+
+  .earningRow,
+  .advancedGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .componentTreatment {
+    padding-bottom: 2px;
+  }
+
+  .resultBreakdown div {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .cta {
+    display: block;
+    padding: 34px 20px;
+  }
+
+  .cta a {
+    display: inline-block;
+    margin-top: 12px;
+  }
+}
