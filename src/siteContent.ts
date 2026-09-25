@@ -3,21 +3,21 @@ import type { Page } from './types';
 export const copy = {
   en: {
     name: 'Mohammed Nady', title: 'Head of HR Operations', hero: 'Turning HR Challenges into Practical Solutions',
-    intro: 'I combine HR operations expertise with compensation, workforce analytics and digital solutions to turn complex HR challenges into practical, data-informed decisions.',
+    intro: 'I combine HR operations expertise with compensation, workforce analytics, and digital solutions to turn complex HR challenges into practical, data-informed decisions.',
     tools: 'Explore HR Tools', cases: 'View Case Studies', focus: 'What I Focus On', impact: 'Practical HR solutions for real business impact.',
     featured: 'Featured HR Tools', selected: 'Selected Case Studies', insights: 'Latest HR Insights', connect: "Let's Connect on LinkedIn",
   },
   ar: {
     name: 'محمد نادي', title: 'رئيس عمليات الموارد البشرية', hero: 'أحوّل تحديات الموارد البشرية إلى حلول عملية',
     intro: 'أجمع بين خبرة عمليات الموارد البشرية والتعويضات وتحليلات القوى العاملة والحلول الرقمية لتحويل التحديات المعقدة إلى قرارات عملية مدعومة بالبيانات.',
-    tools: 'استكشف أدوات HR', cases: 'استعرض الدراسات العملية', focus: 'مجالات التركيز', impact: 'حلول موارد بشرية عملية ذات أثر حقيقي على الأعمال.',
-    featured: 'أدوات HR المميزة', selected: 'دراسات عملية مختارة', insights: 'أحدث رؤى HR', connect: 'تواصل معي على LinkedIn',
+    tools: 'استكشف أدوات الموارد البشرية', cases: 'استعرض الدراسات العملية', focus: 'مجالات التركيز', impact: 'حلول عملية للموارد البشرية ذات أثر حقيقي على الأعمال.',
+    featured: 'أدوات الموارد البشرية المميزة', selected: 'دراسات عملية مختارة', insights: 'أحدث رؤى الموارد البشرية', connect: 'تواصل معي عبر LinkedIn',
   },
 };
 
 export const navLabels = {
   en: { home: 'Home', about: 'About', tools: 'HR Tools', grossNet: 'Gross / Net Tool', contact: 'Contact' },
-  ar: { home: 'الرئيسية', about: 'عني', tools: 'أدوات HR', grossNet: 'حاسبة الراتب', contact: 'تواصل' },
+  ar: { home: 'الرئيسية', about: 'عني', tools: 'أدوات الموارد البشرية', grossNet: 'حاسبة الإجمالي والصافي', contact: 'تواصل' },
 };
 
 export const focusItems = {
@@ -28,10 +28,10 @@ export const focusItems = {
     ['Digital HR & Automation', 'Leveraging technology to simplify and enhance HR processes.'],
   ],
   ar: [
-    ['HR Operations', 'عمليات موارد بشرية فعالة ومنضبطة تتمحور حول الأفراد.'],
-    ['Compensation & Benefits', 'مكافآت عادلة وتنافسية ومستدامة.'],
-    ['Workforce Analytics', 'تحويل البيانات إلى قرارات أكثر وضوحًا.'],
-    ['Digital HR & Automation', 'توظيف التكنولوجيا لتبسيط وتحسين العمليات.'],
+    ['عمليات الموارد البشرية', 'عمليات فعالة ومنضبطة تتمحور حول الأفراد.'],
+    ['التعويضات والمزايا', 'مكافآت عادلة وتنافسية ومستدامة.'],
+    ['تحليلات القوى العاملة', 'تحويل البيانات إلى قرارات أكثر وضوحًا.'],
+    ['التحول الرقمي والأتمتة', 'توظيف التكنولوجيا لتبسيط عمليات الموارد البشرية وتحسينها.'],
   ],
 };
 
@@ -44,8 +44,8 @@ export const toolCards: Record<'en' | 'ar', ToolCard[]> = {
     { icon: '◎', title: 'Compa-Ratio & Salary Positioning', body: 'Compare pay against midpoint and identify compression signals.', action: 'Coming Soon' },
   ],
   ar: [
-    { icon: '▣', title: 'حاسبة Gross ↔ Net — مصر', body: 'تقدير استقطاعات الراتب الشهري باستخدام افتراضات HR قابلة للتعديل.', action: 'افتح الأداة', page: 'grossNet' },
+    { icon: '▣', title: 'حاسبة الإجمالي ↔ الصافي — مصر', body: 'تقدير استقطاعات الراتب الشهري باستخدام افتراضات قابلة للتعديل.', action: 'افتح الأداة', page: 'grossNet' },
     { icon: '↗', title: 'محاكي زيادات الرواتب', body: 'نمذجة ميزانيات الزيادات وتأثيرها الشهري المتوقع.', action: 'قريبًا' },
-    { icon: '◎', title: 'Compa-Ratio وتحديد موقع الراتب', body: 'مقارنة الراتب بمنتصف النطاق واكتشاف إشارات الضغط الداخلي.', action: 'قريبًا' },
+    { icon: '◎', title: 'نسبة الراتب إلى منتصف النطاق (Compa-Ratio)', body: 'مقارنة الراتب بمنتصف النطاق واكتشاف إشارات ضغط الرواتب.', action: 'قريبًا' },
   ],
 };

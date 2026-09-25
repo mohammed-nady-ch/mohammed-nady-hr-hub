@@ -5,9 +5,9 @@ export default function ToolsPage({ ar, lang, setPage }: { ar: boolean; lang: La
   return (
     <>
       <section className="pageHero">
-        <small>{ar ? 'HR TOOLS' : 'HR TOOLS'}</small>
+        <small>{ar ? 'أدوات الموارد البشرية' : 'HR TOOLS'}</small>
         <h1>{ar ? 'أدوات عملية لدعم قرارات الموارد البشرية اليومية.' : 'Practical tools for day-to-day HR decision support.'}</h1>
-        <p>{ar ? 'ابدأ بحاسبة الراتب، ثم لاحقًا سيتم إضافة محاكاة الزيادات وتحليل موقع الراتب داخل النطاق.' : 'Start with the salary calculator. Salary increase simulation and salary positioning tools will follow.'}</p>
+        <p>{ar ? 'ابدأ بحاسبة الراتب، وستُضاف لاحقًا أدوات لمحاكاة الزيادات وتحليل موقع الراتب داخل النطاق.' : 'Start with the salary calculator. Salary increase simulation and salary positioning tools will follow.'}</p>
       </section>
       <ToolsPreview lang={lang} setPage={setPage} />
     </>

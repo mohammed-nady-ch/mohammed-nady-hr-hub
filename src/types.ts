@@ -8,6 +8,8 @@ export const pagePaths: Record<Page, string> = {
   grossNet: '/tools/gross-net',
 };
 
+export const contactSearch = '?section=contact';
+
 export function pageFromPath(pathname: string): Page {
   const match = (Object.entries(pagePaths) as [Page, string][]).find(([, path]) => path === pathname);
   return match?.[0] ?? 'home';

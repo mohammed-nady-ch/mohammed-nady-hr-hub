@@ -17,20 +17,25 @@ export default function App() {
   const page = pageFromPath(location.pathname);
   const ar = lang === 'ar';
 
+  React.useEffect(() => {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ar ? 'rtl' : 'ltr';
+  }, [ar, lang]);
+
   const setPage = (nextPage: Page) => {
     navigate(pagePaths[nextPage]);
   };
 
   React.useEffect(() => {
-    if (location.hash === '#contact') {
+    if (new URLSearchParams(location.search).get('section') === 'contact') {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
       return;
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.hash, location.pathname]);
+  }, [location.pathname, location.search]);
 
   return (
-    <div dir={ar ? 'rtl' : 'ltr'}>
+    <div dir={ar ? 'rtl' : 'ltr'} lang={lang}>
       <Header ar={ar} lang={lang} page={page} setLang={setLang} setPage={setPage} />
       <main>
         <Routes>
@@ -42,7 +47,7 @@ export default function App() {
         </Routes>
         <ContactCTA ar={ar} lang={lang} />
       </main>
-      <Footer />
+      <Footer ar={ar} />
     </div>
   );
 }

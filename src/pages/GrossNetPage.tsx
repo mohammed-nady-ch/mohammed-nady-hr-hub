@@ -13,6 +13,7 @@ type EarningId = 'basic' | 'fixedAllowance' | 'variableAllowance' | 'endOfServic
 type BenefitId = 'medical' | 'lifeInsurance' | 'transportation' | 'meals' | 'otherBenefits';
 
 const terminationExemptionIds = new Set<EarningId>(['endOfServiceBenefit', 'leaveBalanceSettlement']);
+const employerTaxBearingIds = new Set<EarningId>(['fixedAllowance', 'variableAllowance', 'commission', 'overtime', 'otherEarnings']);
 const permanentlyInsurableIds = new Set<EarningId>(['basic', 'fixedAllowance']);
 const permanentlyNonInsurableIds = new Set<EarningId>([
   'commission',
@@ -49,42 +50,42 @@ const content = {
   en: {
     eyebrow: 'EGYPT · PRIVATE SECTOR · 2026',
     title: 'Monthly Gross / Net Salary Calculator',
-    body: 'Estimate monthly salary deductions using separated 2026 rules. Choose the direction, enter the actual salary components, then review the full employee and employer breakdown.',
+    body: 'Estimate monthly salary deductions using configurable 2026 rules separated from the calculation engine. Choose the direction, enter the actual salary components, then review the full employee and employer breakdown.',
     grossToNet: 'Gross to Net', netToGross: 'Net to Gross',
     salaryComponents: 'Monthly salary components', targetNet: 'Target monthly net', calculatedBasic: 'Calculated basic salary',
-    basic: 'Basic salary', fixedAllowance: 'Fixed allowances', variableAllowance: 'Variable allowances', endOfServiceBenefit: 'End-of-service benefit', commission: 'Commission', overtime: 'Overtime', leaveBalanceSettlement: 'Leave balance paid after termination', otherEarnings: 'Other earnings', otherDeductions: 'Other deductions',
-    insurable: 'SI', employerBearsTax: 'Employer bears tax', taxExempt: 'Tax exempt', treatmentHint: 'Regular payments remain taxable. Use the special termination fields only when their exemption conditions are met.',
+    basic: 'Basic salary', fixedAllowance: 'Fixed allowances', variableAllowance: 'Variable allowances', endOfServiceBenefit: 'End-of-service benefit', commission: 'Commission', overtime: 'Overtime', leaveBalanceSettlement: 'Unused leave payout after termination', otherEarnings: 'Other earnings', otherDeductions: 'Other deductions',
+    insurable: 'Social insurance', employerBearsTax: "Company covers this component's tax", taxExempt: 'Tax exempt', treatmentHint: 'Regular payments remain taxable. Use the special termination fields only when their exemption conditions are met.',
     taxBorneWarning: 'Employer-borne tax remains a payroll tax liability. Its estimated incremental value is added to employer cost and is not deducted from employee net.',
     legalExemptionWarning: 'End-of-service benefit and leave balance are treated as exempt only when the employment relationship has ended and the applicable evidence is available.',
     insuranceLimitNote: 'Only variable allowances selected as non-insurable are limited to 30% of the insurance contribution wage. Commission, overtime, other earnings and termination payments are outside this modelling limit.',
     maximumForField: 'Maximum currently available',
     specialSettings: 'Employee status', insured: 'Employee is insured', martyrsFund: 'Apply Martyrs Fund contribution',
-    advanced: 'Advanced settings and employer benefits', employeeRate: 'Employee SI rate', employerRate: 'Employer SI rate', minimumWage: 'Minimum SI wage', maximumWage: 'Maximum SI wage', exemption: 'Annual personal exemption',
+    advanced: 'Advanced settings and employer benefits', employeeRate: 'Employee social insurance rate', employerRate: 'Employer social insurance rate', minimumWage: 'Minimum social insurance wage', maximumWage: 'Maximum social insurance wage', exemption: 'Annual personal exemption',
     customWage: 'Use a declared insurance wage', declaredWage: 'Declared monthly insurance wage', customWarning: 'Scenario input only. The calculator does not create a 25% or 30% exempt allowance automatically.',
     medical: 'Medical insurance', lifeInsurance: 'Life insurance', transportation: 'Transportation', meals: 'Meals', otherBenefits: 'Other employer benefits',
     result: 'Calculation result', gross: 'Monthly gross', taxableEarnings: 'Taxable monthly earnings', insuranceWage: 'Insurance contribution wage', employeeInsurance: 'Employee social insurance', monthlyTax: 'Employee income tax', employerBorneTax: 'Income tax borne by employer', martyrsContribution: 'Martyrs Fund contribution', totalDeductions: 'Total employee deductions', net: 'Monthly net', employerInsurance: 'Employer social insurance', employerBenefits: 'Employer benefits above gross', employerCost: 'Total employer cost', annualTaxable: 'Annual taxable income',
     unreachable: 'The fixed earnings already produce a net above the requested target. Reduce them to calculate a matching basic salary.',
-    note: 'Monthly annualized estimate for a full month. Validate operational payroll with Payroll/Tax and the official forms.',
+    note: 'Estimate based on a full month with annualized taxable income. Validate operational payroll with Payroll/Tax and the official forms.',
   },
   ar: {
     eyebrow: 'مصر · القطاع الخاص · 2026',
     title: 'حاسبة الراتب الشهري من الإجمالي للصافي والعكس',
-    body: 'تقدير استقطاعات الراتب باستخدام قواعد 2026 المفصولة عن المحرك. اختر اتجاه الحساب، وأدخل مكونات الراتب الفعلية، ثم راجع تفاصيل الموظف وتكلفة الشركة.',
+    body: 'تقدير استقطاعات الراتب باستخدام قواعد 2026 القابلة للتعديل والمنفصلة عن محرك الحساب. اختر اتجاه الحساب، وأدخل مكونات الراتب الفعلية، ثم راجع تفاصيل الموظف وتكلفة الشركة.',
     grossToNet: 'من الإجمالي إلى الصافي', netToGross: 'من الصافي إلى الإجمالي',
     salaryComponents: 'مكونات الراتب الشهرية', targetNet: 'صافي الراتب المطلوب', calculatedBasic: 'الراتب الأساسي المحسوب',
     basic: 'الراتب الأساسي', fixedAllowance: 'البدلات الثابتة', variableAllowance: 'البدلات المتغيرة', endOfServiceBenefit: 'مكافأة نهاية الخدمة', commission: 'العمولات', overtime: 'العمل الإضافي', leaveBalanceSettlement: 'رصيد الإجازات بعد انتهاء الخدمة', otherEarnings: 'استحقاقات أخرى', otherDeductions: 'استقطاعات أخرى',
-    insurable: 'تأمين', employerBearsTax: 'الشركة تتحمل الضريبة', taxExempt: 'معفى ضريبيًا', treatmentHint: 'تظل المدفوعات العادية خاضعة للضريبة. استخدم حقلي انتهاء الخدمة فقط عند تحقق شروط الإعفاء.',
+    insurable: 'تأمينات اجتماعية', employerBearsTax: 'تتحمل الشركة ضريبة هذا المكوّن', taxExempt: 'معفى ضريبيًا', treatmentHint: 'تظل المدفوعات العادية خاضعة للضريبة. استخدم حقلي انتهاء الخدمة فقط عند تحقق شروط الإعفاء.',
     taxBorneWarning: 'الضريبة التي تتحملها الشركة تظل التزامًا ضريبيًا، وتضاف قيمتها التقديرية إلى تكلفة الموظف بدل خصمها من صافي راتبه.',
-    legalExemptionWarning: 'تعامل مكافأة نهاية الخدمة ورصيد الإجازات كمعفيين فقط عند انتهاء علاقة العمل وتوافر المستندات المؤيدة.',
+    legalExemptionWarning: 'تُعامل مكافأة نهاية الخدمة ورصيد الإجازات كمعفيين فقط عند انتهاء علاقة العمل وتوافر المستندات المؤيدة.',
     insuranceLimitNote: 'يُطبق حد 30% من أجر الاشتراك التأميني فقط على البدلات المتغيرة عند اختيار عدم خضوعها للتأمينات. العمولات والعمل الإضافي والاستحقاقات الأخرى ومدفوعات انتهاء الخدمة خارج هذا القيد.',
     maximumForField: 'الحد المتاح حاليًا',
     specialSettings: 'حالة الموظف', insured: 'الموظف مؤمّن عليه', martyrsFund: 'تطبيق مساهمة صندوق الشهداء',
-    advanced: 'الإعدادات المتقدمة ومزايا الشركة', employeeRate: 'نسبة تأمين الموظف', employerRate: 'نسبة تأمين الشركة', minimumWage: 'الحد الأدنى للأجر التأميني', maximumWage: 'الحد الأقصى للأجر التأميني', exemption: 'الإعفاء الشخصي السنوي',
+    advanced: 'الإعدادات المتقدمة ومزايا الشركة', employeeRate: 'نسبة التأمينات الاجتماعية للموظف', employerRate: 'نسبة التأمينات الاجتماعية للشركة', minimumWage: 'الحد الأدنى لأجر الاشتراك التأميني', maximumWage: 'الحد الأقصى لأجر الاشتراك التأميني', exemption: 'الإعفاء الشخصي السنوي',
     customWage: 'استخدام أجر تأميني مُعلن', declaredWage: 'الأجر التأميني الشهري المُعلن', customWarning: 'للمحاكاة فقط. الحاسبة لا تنشئ بدلًا معفى بنسبة 25% أو 30% تلقائيًا.',
     medical: 'التأمين الطبي', lifeInsurance: 'التأمين على الحياة', transportation: 'الانتقالات', meals: 'الوجبات', otherBenefits: 'مزايا أخرى تتحملها الشركة',
     result: 'نتيجة الحساب', gross: 'إجمالي الراتب الشهري', taxableEarnings: 'الاستحقاقات الشهرية الخاضعة للضريبة', insuranceWage: 'أجر الاشتراك التأميني', employeeInsurance: 'تأمينات الموظف', monthlyTax: 'ضريبة الدخل على الموظف', employerBorneTax: 'ضريبة الدخل التي تتحملها الشركة', martyrsContribution: 'مساهمة صندوق الشهداء', totalDeductions: 'إجمالي استقطاعات الموظف', net: 'صافي الراتب الشهري', employerInsurance: 'تأمينات الشركة', employerBenefits: 'مزايا الشركة فوق الإجمالي', employerCost: 'إجمالي تكلفة الشركة', annualTaxable: 'الدخل السنوي الخاضع للضريبة',
     unreachable: 'الاستحقاقات الثابتة وحدها تنتج صافيًا أعلى من المطلوب. خفّضها حتى يمكن حساب راتب أساسي مطابق.',
-    note: 'تقدير شهري على أساس شهر كامل وتحويل سنوي. راجع Payroll/Tax والنماذج الرسمية قبل الاستخدام التشغيلي.',
+    note: 'تقدير على أساس شهر كامل مع احتساب الدخل الخاضع للضريبة سنويًا. راجع مختصي الرواتب والضرائب والنماذج الرسمية قبل الاستخدام التشغيلي.',
   },
 } as const;
 
@@ -133,6 +134,7 @@ export default function GrossNetPage({ ar }: { ar: boolean }) {
   const createInput = React.useCallback((components: readonly SalaryComponent[]): PayrollInput => ({
     earnings: components.map((component) => {
       const id = component.id as EarningId;
+      if (id === 'basic') return { ...component, insurable: true, employerBearsIncomeTax: false };
       if (permanentlyInsurableIds.has(id)) return { ...component, insurable: true };
       if (permanentlyNonInsurableIds.has(id)) return { ...component, insurable: false, excludedFromNonInsurableCap: true };
       return component;
@@ -245,6 +247,7 @@ export default function GrossNetPage({ ar }: { ar: boolean }) {
               {earnings.map((component) => {
                 const isCalculatedBasic = direction === 'netToGross' && component.id === 'basic';
                 const terminationExemption = terminationExemptionIds.has(component.id);
+                const canEmployerBearTax = employerTaxBearingIds.has(component.id);
                 const permanentlyInsurable = permanentlyInsurableIds.has(component.id);
                 const permanentlyNonInsurable = permanentlyNonInsurableIds.has(component.id);
                 const otherNonInsurable = earnings
@@ -262,9 +265,9 @@ export default function GrossNetPage({ ar }: { ar: boolean }) {
                     <div className="componentTreatment">
                       {terminationExemption ? (
                         <label><input checked={!component.taxable} onChange={(event) => updateEarning(component.id, { taxable: !event.target.checked, employerBearsIncomeTax: false })} type="checkbox" /> {labels.taxExempt}</label>
-                      ) : (
+                      ) : canEmployerBearTax ? (
                         <label><input checked={Boolean(component.employerBearsIncomeTax)} onChange={(event) => updateEarning(component.id, { taxable: true, employerBearsIncomeTax: event.target.checked })} type="checkbox" /> {labels.employerBearsTax}</label>
-                      )}
+                      ) : null}
                       <label><input checked={component.insurable} disabled={permanentlyInsurable || permanentlyNonInsurable || !insured} onChange={(event) => updateInsurableTreatment(component.id, event.target.checked)} type="checkbox" /> {labels.insurable}</label>
                     </div>
                   </div>

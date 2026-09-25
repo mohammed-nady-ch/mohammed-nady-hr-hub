@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { copy, navLabels } from '../../siteContent';
-import { pagePaths } from '../../types';
+import { contactSearch, pagePaths } from '../../types';
 import type { Lang, Page } from '../../types';
 
 type HeaderProps = {
@@ -70,7 +70,7 @@ export default function Header({ ar, lang, page, setLang, setPage }: HeaderProps
       </button>
       <nav aria-label={ar ? 'التنقل الرئيسي' : 'Primary navigation'} className="desktopNav">
         {navigationItems}
-        <Link to={{ pathname: pagePaths[page], hash: '#contact' }}>{labels.contact}</Link>
+        <Link to={{ pathname: pagePaths[page], search: contactSearch }}>{labels.contact}</Link>
       </nav>
       <button
         aria-controls="mobile-navigation"
@@ -89,7 +89,7 @@ export default function Header({ ar, lang, page, setLang, setPage }: HeaderProps
         id="mobile-navigation"
       >
         {navigationItems}
-        <Link onClick={() => setMenuOpen(false)} to={{ pathname: pagePaths[page], hash: '#contact' }}>{labels.contact}</Link>
+        <Link onClick={() => setMenuOpen(false)} to={{ pathname: pagePaths[page], search: contactSearch }}>{labels.contact}</Link>
       </nav>
       <button className="lang" onClick={switchLanguage} type="button">{ar ? 'EN' : 'AR'}</button>
       <a className="in" href="https://www.linkedin.com/in/mohammed-nady" target="_blank">in</a>
