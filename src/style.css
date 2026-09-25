@@ -2,6 +2,7 @@
   background: #f7faf9;
   color: #10233a;
   font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
 }
 
 * {
@@ -37,7 +38,7 @@ header {
   border-bottom: 1px solid #e5ecea;
   display: flex;
   gap: 24px;
-  height: 72px;
+  height: 80px;
   padding: 0 5%;
   position: sticky;
   top: 0;
@@ -62,8 +63,12 @@ header {
 }
 
 .brand small {
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 2px;
+}
+
+.brand b {
+  font-size: 17px;
 }
 
 .mn {
@@ -86,7 +91,7 @@ header {
   background: none;
   border: 0;
   color: inherit;
-  font-size: 13px;
+  font-size: 15px;
   padding: 8px 0;
 }
 
@@ -140,6 +145,7 @@ header {
 .lang {
   background: none;
   border: 0;
+  font-size: 18px;
   font-weight: 800;
 }
 
@@ -188,6 +194,7 @@ header {
 .copy p,
 .pageHero p {
   color: #435365;
+  font-size: 16px;
   line-height: 1.55;
   max-width: 720px;
 }
@@ -247,7 +254,7 @@ header {
 }
 
 .stats span {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .section {
@@ -264,7 +271,7 @@ header {
 .title h2,
 .lower h2,
 .split h2 {
-  font-size: 22px;
+  font-size: 27px;
 }
 
 .title p {
@@ -302,7 +309,7 @@ header {
 .split p,
 .results p {
   color: #667480;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.5;
 }
 
@@ -324,7 +331,7 @@ header {
 .tools span {
   color: #78858e;
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   margin-top: 16px;
 }
@@ -360,7 +367,7 @@ header {
   align-items: center;
   border-bottom: 1px solid #dce7e5;
   display: flex;
-  font-size: 12px;
+  font-size: 14px;
   gap: 10px;
   padding: 15px 4px;
 }
@@ -413,6 +420,7 @@ header {
   border: 0;
   border-radius: 7px;
   color: #607080;
+  font-size: 16px;
   font-weight: 800;
   padding: 12px;
 }
@@ -438,13 +446,13 @@ header {
 }
 
 .formSectionHeading h2 {
-  font-size: 19px;
+  font-size: 24px;
   margin: 0 0 6px;
 }
 
 .formSectionHeading p {
   color: #75818b;
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -468,7 +476,7 @@ header {
 
 .moneyField small {
   color: #8a671f;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -495,7 +503,7 @@ header {
   align-items: center;
   color: #425568;
   display: flex;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   gap: 5px;
 }
@@ -518,7 +526,7 @@ header {
 
 .payrollChecks legend {
   color: #10233a;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   padding: 0 6px;
 }
@@ -532,7 +540,7 @@ header {
 .advancedSettings summary {
   color: #08706d;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
   padding: 15px 0;
 }
@@ -558,7 +566,7 @@ header {
   border: 1px solid #f0ddb0;
   border-radius: 7px;
   color: #74571a !important;
-  font-size: 11px !important;
+  font-size: 13px !important;
   padding: 10px;
 }
 
@@ -575,6 +583,7 @@ header {
 
 .payrollResults > small {
   color: #08706d;
+  font-size: 13px;
   font-weight: 900;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -594,14 +603,14 @@ header {
 }
 
 .resultBreakdown b {
-  font-size: 15px;
+  font-size: 17px;
   text-align: end;
   white-space: nowrap;
 }
 
 .resultBreakdown .emphasizedRow b {
   color: #08706d;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .calculator {
@@ -617,7 +626,7 @@ header {
 .calculator span,
 .results span {
   color: #607080;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -625,7 +634,8 @@ header {
   border: 1px solid #cfdcda;
   border-radius: 7px;
   color: #10233a;
-  padding: 12px;
+  font-size: 18px;
+  padding: 14px;
   width: 100%;
 }
 
@@ -656,7 +666,7 @@ header {
 
 .results b {
   color: #10233a;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .results .net {
@@ -668,7 +678,7 @@ header {
 
 .results .net b {
   color: #08706d;
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .payrollResults .resultBreakdown {
@@ -709,7 +719,7 @@ header {
 footer {
   background: white;
   color: #75818b;
-  font-size: 11px;
+  font-size: 13px;
   padding: 24px;
   text-align: center;
 }
@@ -732,7 +742,7 @@ footer {
 
   .desktopNav a,
   .desktopNav button {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .grid4,
@@ -772,7 +782,7 @@ footer {
   }
 
   .brand b {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .desktopNav {
@@ -799,7 +809,7 @@ footer {
   .mobileNav a,
   .mobileNav button {
     border-bottom: 1px solid #edf2f1;
-    font-size: 14px;
+    font-size: 16px;
     padding: 13px 4px;
     text-align: start;
     width: 100%;
