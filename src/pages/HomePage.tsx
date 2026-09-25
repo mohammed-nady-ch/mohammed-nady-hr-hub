@@ -17,7 +17,7 @@ export default function HomePage({ ar, lang, setPage }: { ar: boolean; lang: Lan
             <button className="ghost" onClick={() => setPage('about')} type="button">{ar ? 'اعرف المزيد' : 'Learn More'}</button>
           </div>
         </div>
-        <div className="portrait"><img alt={t.name} src="/mohammed-nady-hero.png" /></div>
+        <div className="portrait"><img alt={t.name} src={`${import.meta.env.BASE_URL}mohammed-nady-hero.png`} /></div>
       </section>
       <Stats ar={ar} />
       <FocusSection lang={lang} />
