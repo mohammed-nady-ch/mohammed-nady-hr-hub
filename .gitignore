@@ -10,6 +10,9 @@ coverage/
 *.log
 *.tsbuildinfo
 
+# Local project handoff for private Codex sessions
+docs/PROJECT-HANDOFF.local.md
+
 .DS_Store
 Thumbs.db
 .vscode/
