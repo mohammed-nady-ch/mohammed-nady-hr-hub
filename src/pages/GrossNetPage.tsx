@@ -13,6 +13,7 @@ type EarningId = 'basic' | 'fixedAllowance' | 'variableAllowance' | 'endOfServic
 type BenefitId = 'medical' | 'lifeInsurance' | 'transportation' | 'meals' | 'otherBenefits';
 
 const terminationExemptionIds = new Set<EarningId>(['endOfServiceBenefit', 'leaveBalanceSettlement']);
+const regularSalaryIds = new Set<EarningId>(['basic', 'fixedAllowance', 'variableAllowance', 'commission', 'overtime', 'otherEarnings']);
 const employerTaxBearingIds = new Set<EarningId>(['fixedAllowance', 'variableAllowance', 'commission', 'overtime', 'otherEarnings']);
 const permanentlyInsurableIds = new Set<EarningId>(['basic', 'fixedAllowance']);
 const permanentlyNonInsurableIds = new Set<EarningId>([
@@ -29,11 +30,11 @@ interface EditableEarning extends SalaryComponent {
 
 const initialEarnings: EditableEarning[] = [
   { id: 'basic', amount: 25_000, taxable: true, insurable: true, subjectToMartyrsFund: true },
-  { id: 'fixedAllowance', amount: 0, taxable: true, insurable: true },
-  { id: 'variableAllowance', amount: 0, taxable: true, insurable: true },
-  { id: 'commission', amount: 0, taxable: true, insurable: false, excludedFromNonInsurableCap: true },
-  { id: 'overtime', amount: 0, taxable: true, insurable: false, excludedFromNonInsurableCap: true },
-  { id: 'otherEarnings', amount: 0, taxable: true, insurable: false, excludedFromNonInsurableCap: true },
+  { id: 'fixedAllowance', amount: 0, taxable: true, insurable: true, subjectToMartyrsFund: true },
+  { id: 'variableAllowance', amount: 0, taxable: true, insurable: true, subjectToMartyrsFund: true },
+  { id: 'commission', amount: 0, taxable: true, insurable: false, excludedFromNonInsurableCap: true, subjectToMartyrsFund: true },
+  { id: 'overtime', amount: 0, taxable: true, insurable: false, excludedFromNonInsurableCap: true, subjectToMartyrsFund: true },
+  { id: 'otherEarnings', amount: 0, taxable: true, insurable: false, excludedFromNonInsurableCap: true, subjectToMartyrsFund: true },
   { id: 'leaveBalanceSettlement', amount: 0, taxable: false, insurable: false, excludedFromNonInsurableCap: true },
   { id: 'endOfServiceBenefit', amount: 0, taxable: false, insurable: false, excludedFromNonInsurableCap: true },
 ];
@@ -57,8 +58,8 @@ const content = {
     insurable: 'Social insurance', employerBearsTax: "Company covers this component's tax", taxExempt: 'Tax exempt', treatmentHint: 'Regular payments remain taxable. Use the special termination fields only when their exemption conditions are met.',
     taxBorneWarning: 'Employer-borne tax remains a payroll tax liability. Its estimated incremental value is added to employer cost and is not deducted from employee net.',
     legalExemptionWarning: 'End-of-service benefit and leave balance are treated as exempt only when the employment relationship has ended and the applicable evidence is available.',
-    insuranceLimitNote: 'Only variable allowances selected as non-insurable are limited to 30% of the insurance contribution wage. Commission, overtime, other earnings and termination payments are outside this modelling limit.',
-    maximumForField: 'Maximum currently available',
+    insuranceLimitNote: 'The optional organizational-policy limit applies only to variable allowances selected as non-insurable, up to a maximum of 30% of the insurance contribution wage. It is a modelling control, not an automatic statutory exemption. Fixed allowances remain insurable; commission, overtime, other earnings and termination payments are outside this limit.',
+    maximumForField: 'Maximum currently available under the 30% policy',
     specialSettings: 'Employee status', insured: 'Employee is insured', martyrsFund: 'Apply Martyrs Fund contribution',
     advanced: 'Advanced settings and employer benefits', employeeRate: 'Employee social insurance rate', employerRate: 'Employer social insurance rate', minimumWage: 'Minimum social insurance wage', maximumWage: 'Maximum social insurance wage', exemption: 'Annual personal exemption',
     customWage: 'Use a declared insurance wage', declaredWage: 'Declared monthly insurance wage', customWarning: 'Scenario input only. The calculator does not create a 25% or 30% exempt allowance automatically.',
@@ -77,8 +78,8 @@ const content = {
     insurable: 'تأمينات اجتماعية', employerBearsTax: 'تتحمل الشركة ضريبة هذا المكوّن', taxExempt: 'معفى ضريبيًا', treatmentHint: 'تظل المدفوعات العادية خاضعة للضريبة. استخدم حقلي انتهاء الخدمة فقط عند تحقق شروط الإعفاء.',
     taxBorneWarning: 'الضريبة التي تتحملها الشركة تظل التزامًا ضريبيًا، وتضاف قيمتها التقديرية إلى تكلفة الموظف بدل خصمها من صافي راتبه.',
     legalExemptionWarning: 'تُعامل مكافأة نهاية الخدمة ورصيد الإجازات كمعفيين فقط عند انتهاء علاقة العمل وتوافر المستندات المؤيدة.',
-    insuranceLimitNote: 'يُطبق حد 30% من أجر الاشتراك التأميني فقط على البدلات المتغيرة عند اختيار عدم خضوعها للتأمينات. العمولات والعمل الإضافي والاستحقاقات الأخرى ومدفوعات انتهاء الخدمة خارج هذا القيد.',
-    maximumForField: 'الحد المتاح حاليًا',
+    insuranceLimitNote: 'يُطبق حد سياسة الجهة الاختياري فقط على البدلات المتغيرة المختارة كغير خاضعة للتأمينات، وبحد أقصى 30% من أجر الاشتراك التأميني. هذا قيد للمحاكاة وليس إعفاءً قانونيًا تلقائيًا. تظل البدلات الثابتة خاضعة، بينما تقع العمولات والعمل الإضافي والاستحقاقات الأخرى ومدفوعات انتهاء الخدمة خارج هذا الحد.',
+    maximumForField: 'الحد المتاح حاليًا وفق سياسة 30%',
     specialSettings: 'حالة الموظف', insured: 'الموظف مؤمّن عليه', martyrsFund: 'تطبيق مساهمة صندوق الشهداء',
     advanced: 'الإعدادات المتقدمة ومزايا الشركة', employeeRate: 'نسبة التأمينات الاجتماعية للموظف', employerRate: 'نسبة التأمينات الاجتماعية للشركة', minimumWage: 'الحد الأدنى لأجر الاشتراك التأميني', maximumWage: 'الحد الأقصى لأجر الاشتراك التأميني', exemption: 'الإعفاء الشخصي السنوي',
     customWage: 'استخدام أجر تأميني مُعلن', declaredWage: 'الأجر التأميني الشهري المُعلن', customWarning: 'للمحاكاة فقط. الحاسبة لا تنشئ بدلًا معفى بنسبة 25% أو 30% تلقائيًا.',
@@ -134,10 +135,11 @@ export default function GrossNetPage({ ar }: { ar: boolean }) {
   const createInput = React.useCallback((components: readonly SalaryComponent[]): PayrollInput => ({
     earnings: components.map((component) => {
       const id = component.id as EarningId;
-      if (id === 'basic') return { ...component, insurable: true, employerBearsIncomeTax: false };
-      if (permanentlyInsurableIds.has(id)) return { ...component, insurable: true };
-      if (permanentlyNonInsurableIds.has(id)) return { ...component, insurable: false, excludedFromNonInsurableCap: true };
-      return component;
+      const withMartyrsFundTreatment = { ...component, subjectToMartyrsFund: regularSalaryIds.has(id) };
+      if (id === 'basic') return { ...withMartyrsFundTreatment, insurable: true, employerBearsIncomeTax: false };
+      if (permanentlyInsurableIds.has(id)) return { ...withMartyrsFundTreatment, insurable: true };
+      if (permanentlyNonInsurableIds.has(id)) return { ...withMartyrsFundTreatment, insurable: false, excludedFromNonInsurableCap: true };
+      return withMartyrsFundTreatment;
     }),
     insured,
     martyrsFundEnabled,

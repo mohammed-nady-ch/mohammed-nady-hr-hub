@@ -692,6 +692,464 @@ header {
   gap: 16px;
 }
 
+.salaryIncreaseSection {
+  background: #f7f9f9;
+  display: grid;
+  gap: 24px;
+}
+
+.privacyNotice {
+  align-items: flex-start;
+  background: #eaf6f2;
+  border-inline-start: 4px solid #08706d;
+  display: flex;
+  gap: 12px;
+  padding: 15px 18px;
+}
+
+.privacyNotice strong {
+  color: #075c59;
+  white-space: nowrap;
+}
+
+.privacyNotice span {
+  color: #405d5b;
+  line-height: 1.5;
+}
+
+.salaryWorkflow {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+}
+
+.salaryUpload,
+.scenarioSettings,
+.salaryResultsSection {
+  background: #fff;
+  border: 1px solid #dce7e5;
+  border-radius: 8px;
+  min-width: 0;
+  padding: 22px;
+}
+
+.salarySectionHeading {
+  align-items: flex-start;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.salarySectionHeading > span {
+  background: #10233a;
+  border-radius: 50%;
+  color: #fff;
+  display: grid;
+  flex: 0 0 30px;
+  font-size: 14px;
+  font-weight: 800;
+  height: 30px;
+  place-items: center;
+}
+
+.salarySectionHeading h2,
+.resultSectionHeader h2,
+.salaryResultsSection > h2,
+.salaryMethodology h2 {
+  font-size: 22px;
+  margin: 2px 0 5px;
+}
+
+.salarySectionHeading p,
+.salaryMethodology p {
+  color: #65727e;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.uploadActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.primaryButton,
+.secondaryButton,
+.addScenarioButton,
+.calculateImpactButton,
+.tablePagination button {
+  border: 1px solid #08706d;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 11px 15px;
+}
+
+.primaryButton,
+.calculateImpactButton {
+  background: #08706d;
+  color: #fff;
+}
+
+.secondaryButton,
+.addScenarioButton,
+.tablePagination button {
+  background: #fff;
+  color: #08706d;
+}
+
+.fileButton {
+  display: inline-flex;
+  position: relative;
+}
+
+.fileButton input {
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.fileStatus {
+  background: #f2f5f5;
+  border-radius: 7px;
+  color: #556673;
+  margin: 16px 0 0;
+  padding: 12px;
+}
+
+.fileStatus.success {
+  background: #edf8f1;
+  color: #24613a;
+}
+
+.validationPanel {
+  background: #fff5f3;
+  border: 1px solid #efc4bc;
+  border-radius: 7px;
+  color: #7c3327;
+  margin-top: 16px;
+  padding: 14px;
+}
+
+.validationPanel ul {
+  margin: 10px 0;
+  max-height: 300px;
+  overflow: auto;
+  padding-inline-start: 22px;
+}
+
+.validationPanel li {
+  line-height: 1.45;
+  margin: 5px 0;
+}
+
+.validationPanel a {
+  color: #075f75;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.salaryField {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.salaryField > span,
+.employeeTableTools label span {
+  color: #425568;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.salaryField input,
+.salaryField select,
+.employeeTableTools input,
+.employeeTableTools select,
+.resultSectionHeader select {
+  background: #fff;
+  border: 1px solid #c9d6d4;
+  border-radius: 7px;
+  color: #10233a;
+  font-size: 15px;
+  min-width: 0;
+  padding: 11px;
+  width: 100%;
+}
+
+.salaryField small {
+  color: #71808b;
+  font-size: 12px;
+}
+
+.budgetField {
+  max-width: 360px;
+}
+
+.scenarioGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.scenarioCard {
+  border: 1px solid #dce7e5;
+  border-radius: 8px;
+  display: grid;
+  gap: 13px;
+  padding: 14px;
+}
+
+.scenarioCardHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scenarioCardHeader > strong {
+  background: #10233a;
+  border-radius: 5px;
+  color: #fff;
+  display: grid;
+  height: 30px;
+  place-items: center;
+  width: 30px;
+}
+
+.scenarioCardHeader button {
+  background: transparent;
+  border: 0;
+  color: #8f352e;
+  cursor: pointer;
+  font-size: 25px;
+  height: 30px;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+}
+
+.percentageInput {
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px;
+}
+
+.percentageInput input {
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
+}
+
+.percentageInput b {
+  background: #eef3f2;
+  border: 1px solid #c9d6d4;
+  border-inline-start: 0;
+  border-radius: 0 7px 7px 0;
+  display: grid;
+  height: 42px;
+  place-items: center;
+}
+
+[dir='rtl'] .percentageInput b {
+  border-inline-end: 0;
+  border-inline-start: 1px solid #c9d6d4;
+  border-radius: 7px 0 0 7px;
+}
+
+.addScenarioButton {
+  margin-top: 14px;
+}
+
+.calculateImpactButton {
+  display: block;
+  font-size: 16px;
+  margin-top: 20px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.calculateImpactButton:disabled,
+.tablePagination button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+.inlineError {
+  color: #923b31;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.salaryResultsArea {
+  display: grid;
+  gap: 22px;
+}
+
+.resultSectionHeader {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.resultSectionHeader select {
+  max-width: 280px;
+}
+
+.salaryKpiGrid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.salaryKpiGrid article {
+  background: #f4f7f7;
+  border-inline-start: 3px solid #8aa7a4;
+  min-width: 0;
+  padding: 15px;
+}
+
+.salaryKpiGrid span,
+.budgetStatus span {
+  color: #63717d;
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.salaryKpiGrid strong,
+.budgetStatus strong {
+  color: #10233a;
+  display: block;
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+
+.budgetStatus {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+  padding: 15px;
+}
+
+.budgetStatus.within {
+  background: #edf8f1;
+  border-inline-start: 4px solid #2c7c4b;
+}
+
+.budgetStatus.over {
+  background: #fff4ee;
+  border-inline-start: 4px solid #b34b37;
+}
+
+.budgetStatus.over strong {
+  color: #923b31;
+}
+
+.salaryTableWrap {
+  border: 1px solid #dce7e5;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.salaryTableWrap table {
+  border-collapse: collapse;
+  min-width: 760px;
+  width: 100%;
+}
+
+.salaryTableWrap th,
+.salaryTableWrap td {
+  border-bottom: 1px solid #e5ecea;
+  padding: 12px 14px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.salaryTableWrap thead th {
+  background: #10233a;
+  color: #fff;
+  font-size: 13px;
+}
+
+.salaryTableWrap tbody tr:nth-child(even) {
+  background: #f8fafa;
+}
+
+.salaryTableWrap tbody th {
+  color: #33495c;
+}
+
+.comparisonTable thead th:not(:first-child),
+.comparisonTable td {
+  text-align: end;
+}
+
+.comparisonTable th small {
+  color: #b8d8d4;
+  display: block;
+  margin-top: 4px;
+}
+
+.employeeTableTools {
+  align-items: end;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(220px, 1fr) minmax(180px, 280px);
+  margin-bottom: 12px;
+}
+
+.employeeTableTools label {
+  display: grid;
+  gap: 6px;
+}
+
+.tablePagination {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.emptyTable {
+  color: #65727e;
+  text-align: center;
+}
+
+.salaryMethodology {
+  background: #10233a;
+  color: #fff;
+  padding: 34px 5%;
+}
+
+.salaryMethodology > div {
+  max-width: 980px;
+}
+
+.salaryMethodology p {
+  color: #cfdae3;
+}
+
+.salaryField input:focus-visible,
+.employeeTableTools input:focus-visible,
+.employeeTableTools select:focus-visible,
+.resultSectionHeader select:focus-visible,
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.addScenarioButton:focus-visible,
+.calculateImpactButton:focus-visible,
+.fileButton:focus-within {
+  outline: 3px solid rgb(8 112 109 / 25%);
+  outline-offset: 2px;
+}
+
 .cta {
   align-items: center;
   background: #076467;
@@ -765,6 +1223,14 @@ footer {
 
   .stats div {
     border: 0;
+  }
+
+  .salaryWorkflow {
+    grid-template-columns: 1fr;
+  }
+
+  .salaryKpiGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -921,5 +1387,43 @@ footer {
   .cta a {
     display: inline-block;
     margin-top: 12px;
+  }
+
+  .privacyNotice,
+  .resultSectionHeader {
+    display: grid;
+  }
+
+  .privacyNotice strong {
+    white-space: normal;
+  }
+
+  .salaryUpload,
+  .scenarioSettings,
+  .salaryResultsSection {
+    padding: 16px;
+  }
+
+  .scenarioGrid,
+  .salaryKpiGrid,
+  .budgetStatus,
+  .employeeTableTools {
+    grid-template-columns: 1fr;
+  }
+
+  .resultSectionHeader select,
+  .resultSectionHeader .primaryButton {
+    max-width: none;
+    width: 100%;
+  }
+
+  .uploadActions > * {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .tablePagination {
+    justify-content: space-between;
   }
 }

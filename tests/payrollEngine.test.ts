@@ -93,6 +93,22 @@ test('tax, insurance, martyrs-fund and employer-benefit treatments are independe
   assert.equal(result.employerCost, 26_881.25);
 });
 
+test('Martyrs Fund contribution includes regular monthly salary components and excludes settlements', () => {
+  const result = calculatePayroll({
+    insured: true,
+    martyrsFundEnabled: true,
+    earnings: [
+      { id: 'basic', amount: 20_000, taxable: true, insurable: true, subjectToMartyrsFund: true },
+      { id: 'fixed-allowance', amount: 3_000, taxable: true, insurable: true, subjectToMartyrsFund: true },
+      { id: 'overtime', amount: 2_000, taxable: true, insurable: false, subjectToMartyrsFund: true },
+      { id: 'termination-settlement', amount: 10_000, taxable: false, insurable: false },
+    ],
+  }, rules);
+
+  assert.equal(result.gross, 35_000);
+  assert.equal(result.martyrsFundContribution, 12.5);
+});
+
 test('Macro Full sample is reproduced as a 2026 full-insurance scenario', () => {
   const result = calculatePayroll(fullBasicSalary(31_992.079373019842), rules);
   assert.equal(result.insuranceContributionWage, 16_700);

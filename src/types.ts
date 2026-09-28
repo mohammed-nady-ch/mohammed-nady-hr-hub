@@ -1,11 +1,12 @@
 export type Lang = 'en' | 'ar';
-export type Page = 'home' | 'about' | 'tools' | 'grossNet';
+export type Page = 'home' | 'about' | 'tools' | 'grossNet' | 'salaryIncrease';
 
 export const pagePaths: Record<Page, string> = {
   home: '/',
   about: '/about',
   tools: '/tools',
   grossNet: '/tools/gross-net',
+  salaryIncrease: '/tools/salary-increase',
 };
 
 export const contactSearch = '?section=contact';

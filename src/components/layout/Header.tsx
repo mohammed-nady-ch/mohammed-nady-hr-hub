@@ -48,7 +48,7 @@ export default function Header({ ar, lang, page, setLang, setPage }: HeaderProps
   };
 
   const navigationItems = items.map((item) => {
-    const active = page === item || (item === 'tools' && page === 'grossNet');
+    const active = page === item || (item === 'tools' && (page === 'grossNet' || page === 'salaryIncrease'));
     return (
       <button
         aria-current={active ? 'page' : undefined}

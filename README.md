@@ -10,6 +10,7 @@ Responsive bilingual HR operations website featuring practical decision-support 
 - Accessible desktop and mobile navigation
 - English and Arabic support with RTL
 - Gross-to-Net and Net-to-Gross payroll calculator
+- Salary increase budget simulator with local Excel import/export and up to three scenarios
 - Separated payroll rules and calculation engine
 - Automated testing and GitHub Pages deployment
 
@@ -22,7 +23,7 @@ React · TypeScript · Vite · GitHub Actions · GitHub Pages
 ```bash
 npm install
 npm run dev
-npm run test:payroll
+npm test
 npm run build
 ```
 

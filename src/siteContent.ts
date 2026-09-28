@@ -16,8 +16,8 @@ export const copy = {
 };
 
 export const navLabels = {
-  en: { home: 'Home', about: 'About', tools: 'HR Tools', grossNet: 'Gross / Net Tool', contact: 'Contact' },
-  ar: { home: 'الرئيسية', about: 'عني', tools: 'أدوات الموارد البشرية', grossNet: 'حاسبة الإجمالي والصافي', contact: 'تواصل' },
+  en: { home: 'Home', about: 'About', tools: 'HR Tools', grossNet: 'Gross / Net Tool', salaryIncrease: 'Salary Increase Tool', contact: 'Contact' },
+  ar: { home: 'الرئيسية', about: 'عني', tools: 'أدوات الموارد البشرية', grossNet: 'حاسبة الإجمالي والصافي', salaryIncrease: 'محاكي زيادات الرواتب', contact: 'تواصل' },
 };
 
 export const focusItems = {
@@ -40,12 +40,12 @@ type ToolCard = { icon: string; title: string; body: string; action: string; pag
 export const toolCards: Record<'en' | 'ar', ToolCard[]> = {
   en: [
     { icon: '▣', title: 'Gross ↔ Net Calculator — Egypt', body: 'Estimate monthly salary deductions with editable HR assumptions.', action: 'Open Tool', page: 'grossNet' },
-    { icon: '↗', title: 'Salary Increase Simulator', body: 'Model merit budgets, increase ranges and total monthly impact.', action: 'Coming Soon' },
+    { icon: '↗', title: 'Salary Increase Budget Simulator', body: 'Compare uniform, weighted and performance-based salary increase allocations against an annual budget.', action: 'Open Tool', page: 'salaryIncrease' },
     { icon: '◎', title: 'Compa-Ratio & Salary Positioning', body: 'Compare pay against midpoint and identify compression signals.', action: 'Coming Soon' },
   ],
   ar: [
     { icon: '▣', title: 'حاسبة الإجمالي ↔ الصافي — مصر', body: 'تقدير استقطاعات الراتب الشهري باستخدام افتراضات قابلة للتعديل.', action: 'افتح الأداة', page: 'grossNet' },
-    { icon: '↗', title: 'محاكي زيادات الرواتب', body: 'نمذجة ميزانيات الزيادات وتأثيرها الشهري المتوقع.', action: 'قريبًا' },
+    { icon: '↗', title: 'محاكي ميزانية زيادات الرواتب', body: 'قارن توزيع الزيادات الموحدة أو الموزونة أو المرتبطة بالأداء مع الميزانية السنوية.', action: 'افتح الأداة', page: 'salaryIncrease' },
     { icon: '◎', title: 'نسبة الراتب إلى منتصف النطاق (Compa-Ratio)', body: 'مقارنة الراتب بمنتصف النطاق واكتشاف إشارات ضغط الرواتب.', action: 'قريبًا' },
   ],
 };

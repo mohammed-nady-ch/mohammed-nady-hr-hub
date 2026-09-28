@@ -7,7 +7,7 @@ export default function ToolsPage({ ar, lang, setPage }: { ar: boolean; lang: La
       <section className="pageHero">
         <small>{ar ? 'أدوات الموارد البشرية' : 'HR TOOLS'}</small>
         <h1>{ar ? 'أدوات عملية لدعم قرارات الموارد البشرية اليومية.' : 'Practical tools for day-to-day HR decision support.'}</h1>
-        <p>{ar ? 'ابدأ بحاسبة الراتب، وستُضاف لاحقًا أدوات لمحاكاة الزيادات وتحليل موقع الراتب داخل النطاق.' : 'Start with the salary calculator. Salary increase simulation and salary positioning tools will follow.'}</p>
+        <p>{ar ? 'استخدم حاسبة الراتب أو قارن سيناريوهات ميزانية الزيادات، مع إضافة أدوات تحليل موقع الراتب لاحقًا.' : 'Use the salary calculator or compare salary-increase budget scenarios. Salary positioning tools will follow.'}</p>
       </section>
       <ToolsPreview lang={lang} setPage={setPage} />
     </>
