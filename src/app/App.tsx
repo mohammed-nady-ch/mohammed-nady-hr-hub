@@ -5,6 +5,7 @@ import Footer from '../components/layout/Footer';
 import Header from '../components/layout/Header';
 import AboutPage from '../pages/AboutPage';
 import GrossNetPage from '../pages/GrossNetPage';
+import GovernmentSalaryPage from '../pages/GovernmentSalaryPage';
 import HomePage from '../pages/HomePage';
 import SalaryIncreasePage from '../pages/SalaryIncreasePage';
 import ToolsPage from '../pages/ToolsPage';
@@ -44,6 +45,7 @@ export default function App() {
           <Route path={pagePaths.about} element={<AboutPage ar={ar} lang={lang} />} />
           <Route path={pagePaths.tools} element={<ToolsPage ar={ar} lang={lang} setPage={setPage} />} />
           <Route path={pagePaths.grossNet} element={<GrossNetPage ar={ar} />} />
+          <Route path={pagePaths.governmentSalary} element={<GovernmentSalaryPage ar={ar} />} />
           <Route path={pagePaths.salaryIncrease} element={<SalaryIncreasePage ar={ar} />} />
           <Route path="*" element={<Navigate replace to={pagePaths.home} />} />
         </Routes>

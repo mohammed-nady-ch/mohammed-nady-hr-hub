@@ -16,8 +16,8 @@ export const copy = {
 };
 
 export const navLabels = {
-  en: { home: 'Home', about: 'About', tools: 'HR Tools', grossNet: 'Gross / Net Tool', salaryIncrease: 'Salary Increase Tool', contact: 'Contact' },
-  ar: { home: 'الرئيسية', about: 'عني', tools: 'أدوات الموارد البشرية', grossNet: 'حاسبة الإجمالي والصافي', salaryIncrease: 'محاكي زيادات الرواتب', contact: 'تواصل' },
+  en: { home: 'Home', about: 'About', tools: 'HR Tools', grossNet: 'Private-Sector Salary Tool', governmentSalary: 'Government Salary Tool', salaryIncrease: 'Salary Increase Tool', contact: 'Contact' },
+  ar: { home: 'الرئيسية', about: 'عني', tools: 'أدوات الموارد البشرية', grossNet: 'حاسبة مرتب القطاع الخاص', governmentSalary: 'حاسبة مرتب القطاع الحكومي', salaryIncrease: 'محاكي زيادات الرواتب', contact: 'تواصل' },
 };
 
 export const focusItems = {
@@ -39,12 +39,14 @@ type ToolCard = { icon: string; title: string; body: string; action: string; pag
 
 export const toolCards: Record<'en' | 'ar', ToolCard[]> = {
   en: [
-    { icon: '▣', title: 'Gross ↔ Net Calculator — Egypt', body: 'Estimate monthly salary deductions with editable HR assumptions.', action: 'Open Tool', page: 'grossNet' },
+    { icon: '▣', title: 'Private-Sector Salary Calculator — Gross ↔ Net', body: 'Estimate monthly salary deductions for private-sector employees in Egypt using editable HR assumptions.', action: 'Open Tool', page: 'grossNet' },
+    { icon: '▤', title: 'Government-Sector Salary Calculator — Egypt', body: 'Estimate monthly net salary for a standard government civil-service employee using separate government payroll rules.', action: 'Open Tool', page: 'governmentSalary' },
     { icon: '↗', title: 'Salary Increase Budget Simulator', body: 'Compare uniform, weighted and performance-based salary increase allocations against an annual budget.', action: 'Open Tool', page: 'salaryIncrease' },
     { icon: '◎', title: 'Compa-Ratio & Salary Positioning', body: 'Compare pay against midpoint and identify compression signals.', action: 'Coming Soon' },
   ],
   ar: [
-    { icon: '▣', title: 'حاسبة الإجمالي ↔ الصافي — مصر', body: 'تقدير استقطاعات الراتب الشهري باستخدام افتراضات قابلة للتعديل.', action: 'افتح الأداة', page: 'grossNet' },
+    { icon: '▣', title: 'حاسبة مرتب القطاع الخاص — الإجمالي ↔ الصافي', body: 'تقدير استقطاعات الراتب الشهري لموظفي القطاع الخاص في مصر باستخدام افتراضات قابلة للتعديل.', action: 'افتح الأداة', page: 'grossNet' },
+    { icon: '▤', title: 'حاسبة مرتب القطاع الحكومي — مصر', body: 'تقدير صافي الراتب الشهري لموظف بالقطاع الحكومي خاضع لقانون الخدمة المدنية، باستخدام قواعد حكومية مستقلة.', action: 'افتح الأداة', page: 'governmentSalary' },
     { icon: '↗', title: 'محاكي ميزانية زيادات الرواتب', body: 'قارن توزيع الزيادات الموحدة أو الموزونة أو المرتبطة بالأداء مع الميزانية السنوية.', action: 'افتح الأداة', page: 'salaryIncrease' },
     { icon: '◎', title: 'نسبة الراتب إلى منتصف النطاق (Compa-Ratio)', body: 'مقارنة الراتب بمنتصف النطاق واكتشاف إشارات ضغط الرواتب.', action: 'قريبًا' },
   ],

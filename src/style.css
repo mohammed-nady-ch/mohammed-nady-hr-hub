@@ -692,6 +692,68 @@ header {
   gap: 16px;
 }
 
+.governmentPayrollSection {
+  background: #f7f9f9;
+  display: grid;
+  gap: 22px;
+}
+
+.governmentScope {
+  align-items: flex-start;
+  border: 1px solid #c9e2df;
+  border-inline-start: 4px solid #08706d;
+  display: flex;
+  gap: 12px;
+  padding: 15px 18px;
+}
+
+.governmentScope strong {
+  color: #075c59;
+  white-space: nowrap;
+}
+
+.governmentScope span {
+  line-height: 1.55;
+}
+
+.governmentFieldGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.governmentMethodology {
+  background: #fff;
+  border: 1px solid #dce7e5;
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.governmentMethodology h2,
+.governmentMethodology h3 {
+  margin: 0 0 10px;
+}
+
+.governmentMethodology h3 {
+  font-size: 17px;
+  margin-top: 18px;
+}
+
+.governmentMethodology p,
+.governmentMethodology li {
+  color: #596a77;
+  line-height: 1.65;
+}
+
+.governmentMethodology ul {
+  margin-bottom: 0;
+  padding-inline-start: 22px;
+}
+
+.governmentMethodology a {
+  color: #08706d;
+}
+
 .salaryIncreaseSection {
   background: #f7f9f9;
   display: grid;
@@ -1390,7 +1452,8 @@ footer {
   }
 
   .privacyNotice,
-  .resultSectionHeader {
+  .resultSectionHeader,
+  .governmentScope {
     display: grid;
   }
 
@@ -1407,7 +1470,8 @@ footer {
   .scenarioGrid,
   .salaryKpiGrid,
   .budgetStatus,
-  .employeeTableTools {
+  .employeeTableTools,
+  .governmentFieldGrid {
     grid-template-columns: 1fr;
   }
 
